@@ -1,0 +1,49 @@
+Rate Course API documentation (``/api/v2/rate_course/..``)
+********************************************************************************
+
+
+POST /api/v2/rate_courses/
+================================================================================
+Method for create or update course rating
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/rate_courses/``
+
+.. code-block:: json
+
+  {
+    "course": 1,
+    "star": 5,
+    "feedback": "Very good"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "user": {
+        "id": 2,
+        "username": "Dat Nguyen Van",
+        "avatar": {
+            "id": 3,
+            "title": "Teemo",
+            "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+            "created_at": "2021-11-13T07:47:00Z"
+        }
+    },
+    "course": 3,
+    "star": 5,
+    "feedback": "Very good",
+    "created_at": "2021-11-09T00:00:00Z",
+    "updated_at": "2021-11-09T00:00:00Z"
+  }
+
+.. note::
+
+  Status - 200

@@ -1,0 +1,741 @@
+Challenge API documentation (``/api/v1/challenge/..``)
+********************************************************************************
+
+
+POST /api/v1/challenge/
+================================================================================
+Method for create new challenge.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/challenge/``
+
+.. code-block:: json
+
+  {
+    "title": "new challenge"
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 2,
+    "title": "new challenge",
+    "description": null,
+    "deadline": "2020-11-15T19:18:46Z",
+    "conditions": [],
+    "image": null
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/challenge/
+================================================================================
+Method for retrieve all challenges.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "first_challange",
+        "description": "descr!",
+        "deadline": "2020-11-15T19:18:46Z",
+        "conditions": [
+            {
+                "id": 1,
+                "description": "first"
+            },
+            {
+                "id": 2,
+                "description": "second"
+            }
+        ],
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 2,
+    "next": "http://127.0.0.1:8000/api/v1/challenge/?limit=1&offset=1",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "first_challange",
+            "description": "descr!",
+            "deadline": "2020-11-15T19:18:46Z",
+            "conditions": [
+                {
+                    "id": 1,
+                    "description": "first"
+                },
+                {
+                    "id": 2,
+                    "description": "second"
+                }
+            ],
+            "image": {
+              "id": 1,
+              "title": "tttiiittlleeee image",
+              "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+              "created_at": "2020-11-12T17:23:14Z"
+            }
+        }
+    ]
+  }
+
+
+GET /api/v1/challenge/<id>/
+================================================================================
+Method for retrieve challenge by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "first_challange",
+    "description": "descr!",
+    "deadline": "2020-11-15T19:18:46Z",
+    "conditions": [
+        {
+            "id": 1,
+            "description": "first"
+        },
+        {
+            "id": 2,
+            "description": "second"
+        }
+    ],
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    }
+  }
+
+
+PUT /api/v1/challenge/<id>/
+================================================================================
+Method for update challenge by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/challenge/1/``
+
+.. code-block:: json
+
+  {
+    "title": "qwerty"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "qwerty",
+    "description": "descr!",
+    "deadline": "2020-11-15T19:18:46Z",
+    "conditions": [
+        {
+            "id": 1,
+            "description": "first"
+        },
+        {
+            "id": 2,
+            "description": "second"
+        }
+    ],
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    }
+  }
+
+
+DELETE /api/v1/challenge/<id>/
+================================================================================
+Method for remove challenge by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/challenge/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+
+
+POST /api/v1/challenge/condition/
+================================================================================
+Method for create new condition for challenge.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``description``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/challenge/condition/``
+
+.. code-block:: json
+
+  {
+    "description": "option #1"
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 3,
+    "description": "option #1"
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/challenge/condition/
+================================================================================
+Method for retrieve all condition of challenge.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/condition/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "description": "first"
+    },
+    {
+        "id": 2,
+        "description": "second"
+    },
+    {
+        "id": 3,
+        "description": "option #1"
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/condition/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 3,
+    "next": "http://127.0.0.1:8000/api/v1/challenge/condition/?limit=1&offset=1",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "description": "first"
+        }
+    ]
+  }
+
+
+GET /api/v1/challenge/condition/<id>/
+================================================================================
+Method for retrieve condition by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/condition/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "description": "first"
+  }
+
+
+PUT /api/v1/challenge/condition/<id>/
+================================================================================
+Method for update condition by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/challenge/condition/1/``
+
+.. code-block:: json
+
+  {
+    "description": "test2"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "description": "test2"
+  }
+
+
+DELETE /api/v1/challenge/condition/<id>/
+================================================================================
+Method for remove condition by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/challenge/condition/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+
+
+POST /api/v1/challenge/request/
+================================================================================
+Method for create new request for challenge.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``user``
+- ``description``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/condition/request/``
+
+.. code-block:: json
+
+  {
+    "description": "qwerty",
+    "challenge": 1,
+    "user": 4,
+    "image": null,
+    "video": 1
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 2,
+    "description": "qwerty",
+    "challenge": {
+        "id": 1,
+        "title": "first_challange",
+        "description": "descr!",
+        "conditions": [
+            {
+                "id": 1,
+                "description": "first"
+            },
+            {
+                "id": 2,
+                "description": "second"
+            }
+        ],
+        "deadline": "2020-11-15T19:44:39Z"
+    },
+    "user": 4,
+    "image": null,
+    "video": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    }
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/challenge/request/
+================================================================================
+Method for retrieve all request of challenge.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/request/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "description": "descrrrr",
+        "challenge": {
+            "id": 1,
+            "title": "first_challange",
+            "description": "descr!",
+            "conditions": [
+                {
+                    "id": 1,
+                    "description": "first"
+                },
+                {
+                    "id": 2,
+                    "description": "second"
+                }
+            ],
+            "deadline": "2020-11-15T19:44:39Z"
+        },
+        "user": 4,
+        "image": null,
+        "video": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/request/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 2,
+    "next": "http://127.0.0.1:8000/api/v1/challenge/request/?limit=1&offset=1",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "description": "descrrrr",
+            "challenge": {
+                "id": 1,
+                "title": "first_challange",
+                "description": "descr!",
+                "conditions": [
+                    {
+                        "id": 1,
+                        "description": "first"
+                    },
+                    {
+                        "id": 2,
+                        "description": "second"
+                    }
+                ],
+                "deadline": "2020-11-15T19:44:39Z"
+            },
+            "user": 4,
+            "image": null,
+            "video": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        }
+    ]
+  }
+
+
+GET /api/v1/challenge/request/<id>/
+================================================================================
+Method for retrieve request by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/challenge/request/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "description": "descrrrr",
+    "challenge": {
+        "id": 1,
+        "title": "first_challange",
+        "description": "descr!",
+        "conditions": [
+            {
+                "id": 1,
+                "description": "first"
+            },
+            {
+                "id": 2,
+                "description": "second"
+            }
+        ],
+        "deadline": "2020-11-15T19:44:39Z"
+    },
+    "user": 4,
+    "image": null,
+    "video": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    }
+  }
+
+
+PUT /api/v1/challenge/request/<id>/
+================================================================================
+Method for update challenge request by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``description``
+- ``user``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/challenge/request/1/``
+
+.. code-block:: json
+
+  {
+    "description": "test2",
+    "user": 1
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "description": "test2",
+    "challenge": {
+        "id": 1,
+        "title": "first_challange",
+        "description": "descr!",
+        "conditions": [
+            {
+                "id": 1,
+                "description": "first"
+            },
+            {
+                "id": 2,
+                "description": "second"
+            }
+        ],
+        "deadline": "2020-11-15T19:44:39Z"
+    },
+    "user": 4,
+    "image": null,
+    "video": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    }
+  }
+
+
+DELETE /api/v1/challenge/request/<id>/
+================================================================================
+Method for remove challenge request by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/challenge/request/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content

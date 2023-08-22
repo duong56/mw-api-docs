@@ -1,0 +1,65 @@
+Welcome to Majestic Woman API documentation!
+================================================================================
+Authentication:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+For clients to authenticate, the token key should be included in the
+Authorization HTTP header.
+The key should be prefixed by the string literal **Token**,
+with whitespace separating the two strings.
+
+*For example:*
+
+::
+
+  Authorization: Token e944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
+
+Unauthenticated responses that are denied permission will result in an
+``HTTP 401 Unauthorized`` response with an appropriate WWW-Authenticate header.
+
+*For example:*
+
+::
+
+  WWW-Authenticate: Token
+
+The **curl** command line tool may be useful for testing token authenticated
+APIs.
+
+*For example:*
+
+::
+
+  curl -X GET http://127.0.0.1:8001/api/v1/user/
+  -H 'Authorization: Token e942b09199c63bcf9418ad846dd0e4bbdfc6ee4b'
+
+Contents:
+================================================================================
+.. toctree::
+  :maxdepth: 2
+
+  source/users
+  source/files
+  source/categories
+  source/teachers
+  source/videos
+  source/courses
+  source/signature_courses
+  source/collections
+  source/stripes
+  source/live_classes
+  source/challenges
+  source/reminders
+  source/courses_v2
+  source/signature_courses_v2
+  source/users_v2
+  source/coupon
+  source/rates
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

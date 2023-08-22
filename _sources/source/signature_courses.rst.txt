@@ -1,0 +1,689 @@
+Signature Course API documentation (``/api/v1/signature_course/..``)
+********************************************************************************
+
+
+POST /api/v1/signature_course/
+================================================================================
+Method for create new signature_course.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``category``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/signature_course/``
+
+.. code-block:: json
+
+  {
+	"title": "first sub category",
+	"description": "my own description",
+	"overview": "some large text",
+	"category": 1,
+    "image": 1,
+	"teacher": 1
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "price": null,
+    "product_id": null,
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/signature_course/
+================================================================================
+Method for retrieve all signature courses.
+
+
+*Ordering (optional):*
+
+Possible ordering parameters:
+ - created_at
+ - updated_at
+
+
+*Possible filters:*
+
+* `category`, integer (*12*)
+* `teacher`, integer (*12*)
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/signature_course/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "course title",
+        "description": "descrrriiiption number one!",
+        "overview": "short owerview",
+        "price": null,
+        "product_id": null,
+        "category": {
+            "id": 1,
+            "title": "Category #1",
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+    }
+  ]
+
+**Example: (with pagination and filter)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/signature_course/?limit=1&offset=0&category=1``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "course title",
+            "price": null,
+            "product_id": null,
+            "description": "descrrriiiption number one!",
+            "overview": "short owerview",
+            "category": {
+                "id": 1,
+                "title": "Category #1",
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ],
+        "created_at": "2020-11-12T20:34:15.699535Z",
+        "updated_at": "2020-11-12T20:34:15.732636Z"
+        }
+    ]
+  }
+
+
+GET /api/v1/signature_course/search/
+================================================================================
+Method for retrieve all signature courses. Required parameter: `search_value`
+
+Default ordering by `id`.
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8000/api/v1/signature_course/search/?search_value=our``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "course title",
+        "description": "descrrriiiption number one!",
+        "overview": "short owerview",
+        "price": null,
+        "product_id": null,
+        "category": {
+            "id": 1,
+            "title": "Category #1",
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ]
+        },
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "created_at": "2020-11-12T20:34:15.699535Z",
+        "updated_at": "2020-11-12T20:34:15.732636Z"
+    }
+  ]
+
+
+GET /api/v1/signature_course/<id>/
+================================================================================
+Method for retrieve signature_course by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/signature_course/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "price": null,
+    "product_id": null,
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+  }
+
+
+PUT /api/v1/signature_course/<id>/
+================================================================================
+Method for update signature_course by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``category``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/signature_course/1/``
+
+.. code-block:: json
+
+  {
+    "title": "first sub course 2"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "price": null,
+    "product_id": null,
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+  }
+
+
+DELETE /api/v1/signature_course/<id>/
+================================================================================
+Method for remove signature_course by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/signature_course/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+
+POST /api/v1/signature_course/<id>/buy/
+================================================================================
+Method for buy signature_course by id.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``receipt_data``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/signature_course/1/buy/``
+
+.. code-block:: json
+
+  {
+    "receipt-data": "FbQYJKoZIhvcNAQcCoIJFXjCCRVoFbQYJKoZIhvcNAQcCoIJFXjCCRVo"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200 OK.
+
+
+POST /api/v1/signature_course/<id>/stripe_buy/
+================================================================================
+Method for buy signature_course by id.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``source``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8000/api/v1/signature_course/1/stripe_buy/``
+
+.. code-block:: json
+
+  {
+    "source": "card"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200 OK.
+

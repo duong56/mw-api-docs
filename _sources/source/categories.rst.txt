@@ -1,0 +1,262 @@
+Category API documentation (``/api/v1/category/..``)
+********************************************************************************
+
+
+POST /api/v1/category/
+================================================================================
+Method for create new category.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/category/``
+
+.. code-block:: json
+
+  {
+    "title": "category_001",
+    "image": 1
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+      "id": 1,
+      "title": "category_001",
+      "image": {
+        "id": 1,
+        "title": "Fierst_file!",
+        "file": "http://127.0.0.1:8007/media/files/2020/04/22/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BF%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE.gif",
+        "width": 500,
+        "height": 323,
+        "created_at": "2020-04-22T12:22:35Z"
+      },
+      "courses_count": 1
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/category/
+================================================================================
+Method for retrieve all categories.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/category/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "category_001",
+        "image": {
+            "id": 1,
+            "title": "Fierst_file!",
+            "file": "http://127.0.0.1:8007/media/files/2020/04/22/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BF%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE.gif",
+            "width": 500,
+            "height": 323,
+            "created_at": "2020-04-22T12:22:35Z"
+        },
+        "courses_count": 1
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/category/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "category_001",
+            "image": {
+                "id": 1,
+                "title": "Fierst_file!",
+                "file": "http://127.0.0.1:8007/media/files/2020/04/22/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BF%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE.gif",
+                "width": 500,
+                "height": 323,
+                "created_at": "2020-04-22T12:22:35Z"
+            },
+            "courses_count": 1
+        }
+    ]
+  }
+
+
+GET /api/v1/category/search/
+================================================================================
+Method for retrieve all categories. Required parameter: `search_value`
+
+Default ordering by `id`.
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8000/api/v1/category/search/?search_value=cat``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "courses_count": 1
+    }
+  ]
+
+
+GET /api/v1/category/<id>/
+================================================================================
+Method for retrieve category by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/category/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "category_001",
+    "image": {
+        "id": 1,
+        "title": "Fierst_file!",
+        "file": "http://127.0.0.1:8007/media/files/2020/04/22/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BF%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE.gif",
+        "width": 500,
+        "height": 323,
+        "created_at": "2020-04-22T12:22:35Z"
+    },
+    "courses_count": 1
+  }
+
+
+PUT /api/v1/category/<id>/
+================================================================================
+Method for update category by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/category/1/``
+
+.. code-block:: json
+
+  {
+    "title": "category_002"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "category_002",
+    "image": {
+        "id": 1,
+        "title": "Fierst_file!",
+        "file": "http://127.0.0.1:8007/media/files/2020/04/22/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%BB%D1%8F_%D0%BF%D0%BE%D0%BA%D1%80%D0%B0%D1%81%D0%BA%D0%B8_%D0%BF%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE.gif",
+        "width": 500,
+        "height": 323,
+        "created_at": "2020-04-22T12:22:35Z"
+    },
+    "courses_count": 1
+  }
+
+
+DELETE /api/v1/category/<id>/
+================================================================================
+Method for remove category by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/category/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+

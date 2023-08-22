@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>User API documentation (/api/v1/user/..) &#8212; Majestic Woman  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Category API documentation (/api/v2/coupon/..)" href="coupon.html" />
+    <link rel="prev" title="Signature Course API documentation (/api/v2/signature_course/..)" href="signature_courses_v2.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="user-api-documentation-api-v1-user">
+<h1>User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)<a class="headerlink" href="#user-api-documentation-api-v1-user" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-api-v2-user-id-payment-history">
+<h2>GET /api/v2/user/&lt;id&gt;/payment_history/<a class="headerlink" href="#get-api-v2-user-id-payment-history" title="Permalink to this headline">¶</a></h2>
+<p>Method for all user payment history.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/3/payment_history/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Course 1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">69.0</span><span class="p">,</span>
+        <span class="nt">&quot;total_price_paid&quot;</span><span class="p">:</span> <span class="mf">60.0</span><span class="p">,</span>
+        <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;due_date&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Single course&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">34</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-21T09:03:21.137974Z&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium version&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">19.99</span><span class="p">,</span>
+        <span class="nt">&quot;total_price_paid&quot;</span><span class="p">:</span> <span class="mf">19.99</span><span class="p">,</span>
+        <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;due_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-21T09:03:08.205152Z&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="put-api-v2-user-id-premium">
+<h2>PUT /api/v2/user/&lt;id&gt;/premium/<a class="headerlink" href="#put-api-v2-user-id-premium" title="Permalink to this headline">¶</a></h2>
+<p>Method for set premium and period premium.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/3/premium/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;plan_title&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium subscription&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;plan_price&quot;</span><span class="p">:</span> <span class="mf">19.99</span><span class="p">,</span>
+    <span class="nt">&quot;plan_description&quot;</span><span class="p">:</span> <span class="s2">&quot;Premium&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-08-19T04:09:25Z&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user">
+<h2>POST /api/v2/user/<a class="headerlink" href="#post-api-v2-user" title="Permalink to this headline">¶</a></h2>
+<p>Method for create new user.</p>
+<p>Same <code class="docutils literal notranslate"><span class="pre">/api/v1/user/</span></code></p>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">58</span><span class="p">,</span>
+        <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email8@gmail.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stripe_customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_K6BOWrtv0Hxj4Q&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;favorite_teachers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;signature_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_collections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;is_viewed_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ios_subscription_deadline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_verify&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-api-v2-user">
+<h2>GET /api/v2/user/<a class="headerlink" href="#get-api-v2-user" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve all users.</p>
+<p>Same <code class="docutils literal notranslate"><span class="pre">/api/v2/user/</span></code></p>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alica&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dimitriades&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;adimitriades4@simplemachines.org&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stripe_customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_K0XwGzY1UrcsWR&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;favorite_teachers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;signature_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_collections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;is_viewed_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ios_subscription_deadline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_verify&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-api-v2-user-id">
+<h2>PUT /api/v2/user/&lt;id&gt;<a class="headerlink" href="#put-api-v2-user-id" title="Permalink to this headline">¶</a></h2>
+<p>Method for update user detail</p>
+<p><strong>Example:</strong></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/1/</span></code></p>
+<p><em>Request:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alica&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dimitriades&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;adimitriades4@simplemachines.org&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;device_token&quot;</span><span class="p">:</span> <span class="s2">&quot;1823712893712873812&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alica&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dimitriades&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;adimitriades4@simplemachines.org&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;stripe_customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_K0XwGzY1UrcsWR&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;favorite_teachers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;favorite_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;signature_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;favorite_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;favorite_collections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;is_viewed_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;ios_subscription_deadline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;is_verify&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-verify">
+<h2>POST /api/v2/user/verify/<a class="headerlink" href="#post-api-v2-user-verify" title="Permalink to this headline">¶</a></h2>
+<p>Method for verify user.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/verify/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email@gmail.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;verify_code&quot;</span><span class="p">:</span> <span class="s2">&quot;034233&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">58</span><span class="p">,</span>
+        <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email8@gmail.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stripe_customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_K6BOWrtv0Hxj4Q&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;favorite_teachers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;signature_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_collections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;is_viewed_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ios_subscription_deadline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_verify&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;Token aa2bbfa988d7c6b1f06384c762d0a216a6ca7c9f&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-send-verify-code">
+<h2>POST /api/v2/user/send_verify_code/<a class="headerlink" href="#post-api-v2-user-send-verify-code" title="Permalink to this headline">¶</a></h2>
+<p>Method for resend verification code.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/send_verify_code/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email@gmail.com&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-login">
+<h2>POST /api/v2/user/login/<a class="headerlink" href="#post-api-v2-user-login" title="Permalink to this headline">¶</a></h2>
+<p>Method for login as user.
+Authentication token not need.</p>
+<div class="section" id="required-fields">
+<h3>Required fields:<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">password</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/login/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;admin@gmail.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;qwerty&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;device&quot;</span><span class="p">:</span> <span class="s2">&quot;123456&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">69</span><span class="p">,</span>
+        <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Last&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email@gmail.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stripe_customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;favorite_teachers&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;signature_courses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;favorite_collections&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;is_viewed_videos&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;ios_subscription_deadline&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;is_premium&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_start&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;premium_period_end&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-08-19T04:09:25Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;is_verify&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;Token d60c922e9010bc894dd8546c4f2d1b85518dbe08&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-change-password">
+<h2>POST /api/v2/user/change_password/<a class="headerlink" href="#post-api-v2-user-change-password" title="Permalink to this headline">¶</a></h2>
+<p>Method for change user password</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/change_password/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;current_password&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;new_password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;Your password has been changed successfully!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-reset-password">
+<h2>POST /api/v2/user/reset_password/<a class="headerlink" href="#post-api-v2-user-reset-password" title="Permalink to this headline">¶</a></h2>
+<p>Method for send verification code for reset user password</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/reset_password/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email@gmail.com&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;Verification code has been sent to your email!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+<div class="section" id="post-api-v2-user-reset-password-done">
+<h2>POST /api/v2/user/reset_password_done/<a class="headerlink" href="#post-api-v2-user-reset-password-done" title="Permalink to this headline">¶</a></h2>
+<p>Method for reset user password</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v2/user/reset_password_done/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;email@gmail.com&quot;</span>
+    <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;123456&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;new_password&quot;</span><span class="p">:</span> <span class="s2">&quot;password123456&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;Your password has been changed successfully!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 200</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Majestic Woman</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="users.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">File API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/file/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/category/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachers.html">Teacher API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/teacher/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">Video API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stripes.html">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_classes.html">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenge API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/challenge/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reminders.html">Reminder API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/reminder/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses_v2.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses_v2.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v2-user-id-payment-history">GET /api/v2/user/&lt;id&gt;/payment_history/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#put-api-v2-user-id-premium">PUT /api/v2/user/&lt;id&gt;/premium/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user">POST /api/v2/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v2-user">GET /api/v2/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#put-api-v2-user-id">PUT /api/v2/user/&lt;id&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-verify">POST /api/v2/user/verify/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-send-verify-code">POST /api/v2/user/send_verify_code/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-login">POST /api/v2/user/login/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-change-password">POST /api/v2/user/change_password/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-reset-password">POST /api/v2/user/reset_password/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v2-user-reset-password-done">POST /api/v2/user/reset_password_done/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupon.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rates.html">Rate Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/rate_course/..</span></code>)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="signature_courses_v2.html" title="previous chapter">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a></li>
+      <li>Next: <a href="coupon.html" title="next chapter">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Muravko Serhii.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/users_v2.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

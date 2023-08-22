@@ -1,0 +1,1258 @@
+Course API documentation (``/api/v2/course/..``)
+********************************************************************************
+
+
+POST /api/v2/course/
+================================================================================
+Method for create new course.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``category``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/course/``
+
+.. code-block:: json
+
+  {
+	"title": "first sub category",
+	"description": "my own description",
+	"overview": "some large text",
+	"category": 1,
+    "image": 1,
+	"teacher": 1,
+    "intro_video": 1,
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "intro_video": {
+        "id": 1,
+        "title": "video #1",
+        "description": "asd",
+        "file720p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "file1080p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "course": 1
+    }
+    "favorite": true,
+    "purchased": true,
+    "total_video": 1,
+    "total_video_time": 17,
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v2/course/
+================================================================================
+Method for retrieve all courses.
+
+
+*Ordering (optional):*
+
+Possible ordering parameters:
+ - created_at
+ - updated_at
+
+
+*Possible filters:*
+
+* `category`, integer (*12*)
+* `teacher`, integer (*12*)
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/course/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+[
+    {
+        "id": 1,
+        "title": "course title",
+        "description": "descrrriiiption number one!",
+        "overview": "short owerview",
+        "category": {
+            "id": 1,
+            "title": "Category #1",
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "intro_video": {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+        "favorite": true,
+        "purchased": true,
+        "total_video": 1,
+        "total_video_time": 17,
+        "created_at": "2020-11-12T20:34:15.699535Z",
+        "updated_at": "2020-11-12T20:34:15.732636Z",
+        "rates": [
+            {
+                "id": 42,
+                "user": {
+                    "id": 34,
+                    "username": "Dat Nguyen Van",
+                    "avatar": {
+                        "id": 2,
+                        "title": "Teemo",
+                        "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                        "created_at": "2021-11-13T07:47:00Z"
+                    }
+                },
+                "course": 1,
+                "star": 4,
+                "feedback": "Cung tam duoc",
+                "created_at": "2021-11-13T07:41:53Z",
+                "updated_at": "2021-11-13T07:41:53Z"
+            }
+        ],
+        "avg_rates": 4.0
+    }
+]
+
+**Example: (with pagination and filter)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/course/?limit=1&offset=0&category=1``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "course title",
+            "description": "descrrriiiption number one!",
+            "overview": "short owerview",
+            "category": {
+                "id": 1,
+                "title": "Category #1",
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "intro_video": {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+            "favorite": true,
+            "purchased": true,
+            "total_video": 1,
+            "total_video_time": 17,
+            "created_at": "2020-11-12T20:34:15.699535Z",
+            "updated_at": "2020-11-12T20:34:15.732636Z",  
+            "rates": [
+                {
+                    "id": 42,
+                    "user": {
+                        "id": 34,
+                        "username": "Dat Nguyen Van",
+                        "avatar": {
+                            "id": 2,
+                            "title": "Teemo",
+                            "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                            "created_at": "2021-11-13T07:47:00Z"
+                        }
+                    },
+                    "course": 1,
+                    "star": 4,
+                    "feedback": "Cung tam duoc",
+                    "created_at": "2021-11-13T07:41:53Z",
+                    "updated_at": "2021-11-13T07:41:53Z"
+                }
+            ],
+            "avg_rates": 4.0
+        }
+    ]
+  }
+
+
+GET /api/v2/course/<id>/
+================================================================================
+Method for retrieve course by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/course/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "intro_video": {
+        "id": 1,
+        "title": "video #1",
+        "description": "asd",
+        "file720p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "file1080p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "course": 1
+    }
+    "favorite": true,
+    "purchased": true,
+    "total_video": 1,
+    "total_video_time": 17,
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z",
+    "rates": [
+        {
+            "id": 42,
+            "user": {
+                "id": 34,
+                "username": "Dat Nguyen Van",
+                "avatar": {
+                    "id": 2,
+                    "title": "Teemo",
+                    "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                    "created_at": "2021-11-13T07:47:00Z"
+                }
+            },
+            "course": 1,
+            "star": 4,
+            "feedback": "Cung tam duoc",
+            "created_at": "2021-11-13T07:41:53Z",
+            "updated_at": "2021-11-13T07:41:53Z"
+        }
+    ],
+    "avg_rates": 4.0
+  }
+
+
+PUT /api/v2/course/<id>/
+================================================================================
+Method for update course by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``category``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v2/course/1/``
+
+.. code-block:: json
+
+  {
+    "title": "first sub course 2"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "course title",
+    "description": "descrrriiiption number one!",
+    "overview": "short owerview",
+    "category": {
+        "id": 1,
+        "title": "Category #1",
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    },
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "intro_video": {
+        "id": 1,
+        "title": "video #1",
+        "description": "asd",
+        "file720p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "file1080p": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "course": 1
+    }
+    "favorite": true,
+    "purchased": true,
+    "status": "unstarted"/"started"/"finished",
+    "total_video": 1,
+    "total_video_time": 17,
+    "created_at": "2020-11-12T20:34:15.699535Z",
+    "updated_at": "2020-11-12T20:34:15.732636Z"
+  }
+
+
+DELETE /api/v2/course/<id>/
+================================================================================
+Method for remove course by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v2/course/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+
+
+POST /api/v2/course/<id>/buy/
+================================================================================
+Method for buy course by id.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``receipt_data``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/course/1/buy/``
+
+.. code-block:: json
+
+{
+    "receipt-data": "FbQYJKoZIhvcNAQcCoIJFXjCCRVoFbQYJKoZIhvcNAQcCoIJFXjCCRVo"
+}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200 OK.
+
+
+POST /api/v2/course/<id>/stripe_buy/
+================================================================================
+Method for buy course by id.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``source``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/course/1/stripe_buy/``
+
+.. code-block:: json
+
+{
+    "source": "card"
+}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200 OK.
+
+GET /api/v2/course/<id>/lessons/
+================================================================================
+Get all lessons in course.
+
+**Example:**
+
+*Request*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/course/1/lessons/``
+
+.. code-block:: json
+
+{}
+
+*Response:*
+
+.. code-block:: json
+
+{
+    "id": 1,
+    "videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1,
+            "signature_course": 1,
+            "course_title": "'oha Wai Nui",
+            "duration": 17
+        }
+    ],
+}
+
+.. note::
+
+  Status - 200
+
+
+PUT /api/v2/course/<id>/favorite/
+================================================================================
+Update user favorite.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v2/course/1/favorite/
+
+.. code-block:: json
+
+{
+    "is_favorite": "true",
+}
+
+*Response:*
+
+.. code-block:: json
+
+{
+    "id": 48,
+    "user": 1,
+    "course": 1,
+    "is_favorite": true,
+    "is_purchased": true,
+    "status": "unstarted"/"started"/"finished",
+}
+
+.. note::
+
+  Status - 200
+
+
+PUT /api/v2/course/<id>/status/
+================================================================================
+Update status course.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v2/course/1/status/
+
+.. code-block:: json
+
+{
+    "status": "unstarted"/"started"/"finished",
+}
+
+*Response:*
+
+.. code-block:: json
+
+{
+    "id": 48,
+    "user": 1,
+    "course": 1,
+    "is_favorite": true,
+    "is_purchased": true,
+    "status": "unstarted"/"started"/"finished",
+}
+
+.. note::
+
+  Status - 200
+
+
+GET /api/v2/purchased_courses/
+================================================================================
+Get list purchased course
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/purchased_courses/
+
+.. code-block:: json
+
+{}
+
+*Response:*
+
+.. code-block:: json
+
+[
+    {
+        "id": 1,
+        "title": "course title",
+        "description": "descrrriiiption number one!",
+        "overview": "short owerview",
+        "category": {
+            "id": 1,
+            "title": "Category #1",
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "intro_video": {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+        "favorite": true,
+        "purchased": true,
+        "status": "unstarted"/"started"/"finished",
+        "total_video": 1,
+        "total_video_time": 17,
+        "created_at": "2020-11-12T20:34:15.699535Z",
+        "updated_at": "2020-11-12T20:34:15.732636Z",
+        "rates": [
+            {
+                "id": 42,
+                "user": {
+                    "id": 34,
+                    "username": "Dat Nguyen Van",
+                    "avatar": {
+                        "id": 2,
+                        "title": "Teemo",
+                        "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                        "created_at": "2021-11-13T07:47:00Z"
+                    }
+                },
+                "course": 1,
+                "star": 4,
+                "feedback": "Cung tam duoc",
+                "created_at": "2021-11-13T07:41:53Z",
+                "updated_at": "2021-11-13T07:41:53Z"
+            }
+        ],
+        "avg_rates": 4.0
+    }
+]
+
+.. note::
+
+  Status - 200
+
+GET /api/v2/favorite_courses/
+================================================================================
+Get list favorite courses
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/favorite_courses/
+
+.. code-block:: json
+
+{}
+
+*Response:*
+
+.. code-block:: json
+
+[
+    {
+        "id": 1,
+        "title": "course title",
+        "description": "descrrriiiption number one!",
+        "overview": "short owerview",
+        "category": {
+            "id": 1,
+            "title": "Category #1",
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        },
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "intro_video": {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+        "favorite": true,
+        "purchased": true,
+        "total_video": 1,
+        "total_video_time": 17,
+        "created_at": "2020-11-12T20:34:15.699535Z",
+        "updated_at": "2020-11-12T20:34:15.732636Z",
+        "rates": [
+            {
+                "id": 42,
+                "user": {
+                    "id": 34,
+                    "username": "Dat Nguyen Van",
+                    "avatar": {
+                        "id": 2,
+                        "title": "Teemo",
+                        "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                        "created_at": "2021-11-13T07:47:00Z"
+                    }
+                },
+                "course": 1,
+                "star": 4,
+                "feedback": "Cung tam duoc",
+                "created_at": "2021-11-13T07:41:53Z",
+                "updated_at": "2021-11-13T07:41:53Z"
+            }
+        ],
+        "avg_rates": 4.0
+    }
+]
+
+.. note::
+
+  Status - 200
+
+
+GET /api/v2/started_courses/
+================================================================================
+Get all courses as 'started' status
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/started_courses/
+
+.. code-block:: json
+
+    {}
+
+*Response:*
+
+.. code-block:: json
+
+    [
+        {
+            "id": 1,
+            "title": "course title",
+            "description": "descrrriiiption number one!",
+            "overview": "short owerview",
+            "category": {
+                "id": 1,
+                "title": "Category #1",
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "intro_video": {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+            "favorite": true,
+            "purchased": true,
+            "total_video": 1,
+            "total_video_time": 17,
+            "created_at": "2020-11-12T20:34:15.699535Z",
+            "updated_at": "2020-11-12T20:34:15.732636Z",
+            "rates": [
+                {
+                    "id": 42,
+                    "user": {
+                        "id": 34,
+                        "username": "Dat Nguyen Van",
+                        "avatar": {
+                            "id": 2,
+                            "title": "Teemo",
+                            "file": "https://d3pf7vxa9ndun9.cloudfront.net/media/files/2021/11/13/teemo.png",
+                            "created_at": "2021-11-13T07:47:00Z"
+                        }
+                    },
+                    "course": 1,
+                    "star": 4,
+                    "feedback": "Cung tam duoc",
+                    "created_at": "2021-11-13T07:41:53Z",
+                    "updated_at": "2021-11-13T07:41:53Z"
+                }
+            ],
+            "avg_rates": 4.0
+        }
+    ]
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/course/buy/
+================================================================================
+Method for buy list course for iOS
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``courses``
+- ``total_cost``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/course/buy/``
+
+.. code-block:: json
+
+  {
+      "courses": ["1", "2"],
+      "total_cost": 12345.0,
+      "total_price_paid": 12300.0,
+      "coupon_code": "NONUTNOVEMBER"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200
+
+
+POST /api/v2/course/stripe_buy/
+================================================================================
+Method for buy list course for Android
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``courses``
+- ``payment_method``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/course/stripe_buy/``
+
+.. code-block:: json
+
+  {
+      "courses": ["1", "2"],
+      "coupon_code": "NONUTNOVEMBER",
+      "source": "card",
+      "payment_method": ""
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 200
+
+
+POST /api/v2/free_lessons/
+================================================================================
+Method for get free lessons
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/free_lessons/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+      "id": 1,
+      "title": "Course 1",
+      "description": "",
+      "overview": "",
+      "teacher": null,
+      "image": {
+          "id": 2,
+          "title": "Teemo",
+          "file": "https://...cloudfront.net/...",
+          "created_at": "2021-11-05T07:51:22Z"
+      },
+      "created_at": "2021-11-03T22:25:21Z",
+      "updated_at": "2021-11-03T22:25:21Z",
+      "favorite": false,
+      "status": "unstarted",
+      "video": {
+        "id": 1,
+        "title": "Lesson 1",
+        "description": "",
+        "file720p": {
+          "id": 2,
+          "title": "Teemo",
+          "file": "https://...cloudfront.net/...",
+          "created_at": "2021-11-05T07:51:22Z"
+        },
+        "file1080p": {
+          "id": 71,
+          "title": "Yasuo",
+          "file": "https://...cloudfront.net/...",
+          "created_at": "2021-11-08T10:13:13Z"
+        },
+        "thumbnail": {
+          "id": 2,
+          "title": "Teemo",
+          "file": "https://...cloudfront.net/...",
+          "created_at": "2021-11-05T07:51:22Z"
+        },
+        "course": 1,
+        "signature_course": null,
+        "course_title": "Course 1",
+        "is_viewed": false,
+        "duration": 10
+      }
+    },
+    {
+      "id": 3,
+      "title": "Course 3",
+      "description": "",
+      "overview": "",
+      "teacher": null,
+      "image": null,
+      "created_at": "2021-11-09T02:12:32Z",
+      "updated_at": "2021-11-09T02:12:32Z",
+      "favorite": false,
+      "status": "unstarted",
+      "video": {
+        "id": 4,
+        "title": "Lesson 3",
+        "description": "",
+        "file720p": null,
+        "file1080p": null,
+        "thumbnail": null,
+        "course": 3,
+        "signature_course": null,
+        "course_title": "Course 3",
+        "is_viewed": false,
+        "duration": 0
+      }
+    }
+  ]
+
+.. note::
+
+  Status - 200

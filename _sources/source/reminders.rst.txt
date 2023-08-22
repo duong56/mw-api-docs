@@ -1,0 +1,233 @@
+Reminder API documentation (``/api/v1/reminder/..``)
+********************************************************************************
+
+
+POST /api/v1/reminder/
+================================================================================
+Method for create new reminder.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``start_datetime``
+- ``user``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/reminder/``
+
+.. code-block:: json
+
+  {
+    "start_datetime": "2020-01-01T00:00:00Z",
+    "user": 4
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 2,
+    "user": 4,
+    "image": null,
+    "video": null,
+    "live_class": null,
+    "start_datetime": "2020-01-01T00:00:00Z"
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/reminder/
+================================================================================
+Method for retrieve all reminders.
+
+
+Possible ordering parameters:
+ - created_at
+ - updated_at
+ - start_datetime
+
+
+*Possible filters:*
+
+* `from_start_datetime`, string (*2020-01-01T00:00:00Z*)
+* `to_start_datetime`, string (*2020-01-10T00:00:00Z*)
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/reminder/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "user": 5,
+        "image": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "video": null,
+        "live_class": null,
+        "start_datetime": "2020-01-01T00:00:00Z"
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/reminder/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "user": 5,
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "video": null,
+            "live_class": null,
+            "start_datetime": "2020-01-01T00:00:00Z"
+        }
+    ]
+  }
+
+
+GET /api/v1/reminder/<id>/
+================================================================================
+Method for retrieve reminder by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/reminder/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "user": 5,
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "video": null,
+    "live_class": null,
+    "start_datetime": "2020-01-01T00:00:00Z"
+  }
+
+
+PUT /api/v1/reminder/<id>/
+================================================================================
+Method for update reminder by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``start_datetime``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/reminder/1/``
+
+.. code-block:: json
+
+  {
+    "start_datetime": "2020-01-02T00:00:00Z"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "user": 5,
+    "image": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "video": null,
+    "live_class": null,
+    "start_datetime": "2020-01-02T00:00:00Z"
+  }
+
+
+DELETE /api/v1/reminder/<id>/
+================================================================================
+Method for remove reminder by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/reminder/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+

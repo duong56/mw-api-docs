@@ -1,0 +1,2834 @@
+User API documentation (``/api/v1/user/..``)
+********************************************************************************
+
+
+POST /api/v1/user/
+================================================================================
+Method for create new user.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``email``
+- ``password``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/``
+
+.. code-block:: json
+
+  {
+    "first_name": "Serhii",
+    "last_name": "Qwed",
+    "email": "serhii001@gmail.com",
+    "password": "Qwerty"
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "user": {
+        "id": 8,
+        "first_name": "Serhii",
+        "last_name": "Qwed",
+        "email": "serhii001@gmail.com",
+        "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+        "favorite_teachers": [
+            {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            }
+        ],
+        "favorite_courses": [
+            {
+                "id": 1,
+                "title": "course title",
+                "description": "descrrriiiption number one!",
+                "overview": "short owerview",
+                "category": {
+                    "id": 1,
+                    "title": "Category #1",
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                },
+                "teacher": {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                },
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ],
+                "created_at": "2020-11-12T20:34:15.699535Z",
+                "updated_at": "2020-11-12T20:34:15.732636Z"
+            }
+        ],
+        "signature_courses": [
+            {
+                "id": 1,
+                "title": "course title",
+                "description": "descrrriiiption number one!",
+                "overview": "short owerview",
+                "category": {
+                    "id": 1,
+                    "title": "Category #1",
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                },
+                "teacher": {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                },
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ],
+                "created_at": "2020-11-12T20:34:15.699535Z",
+                "updated_at": "2020-11-12T20:34:15.732636Z"
+            }
+        ],
+        "favorite_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "is_viewed_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "favorite_collections": [
+            {
+                "id": 1,
+                "title": "first title",
+                "description": "descrrriiiption qwerty",
+                "is_favorite": false,
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "courses": [
+                    {
+                        "id": 1,
+                        "title": "course title",
+                        "description": "descrrriiiption number one!",
+                        "overview": "short owerview",
+                        "category": {
+                            "id": 1,
+                            "title": "Category #1",
+                            "image": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        },
+                        "teacher": {
+                            "id": 1,
+                            "first_name": "Lina",
+                            "last_name": "Koctenko",
+                            "description": "poetic",
+                            "avatar": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "facebook": null,
+                            "instagram": null,
+                            "location": null,
+                            "promo_files": [
+                                {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                }
+                            ],
+                            "promo_videos": [
+                                {
+                                    "id": 1,
+                                    "title": "video #1",
+                                    "description": "asd",
+                                    "file720p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "file1080p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "thumbnail": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "course": 1
+                                }
+                            ]
+                        },
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ],
+                        "created_at": "2020-11-12T20:34:15.699535Z",
+                        "updated_at": "2020-11-12T20:34:15.732636Z"
+                    }
+                ]
+            }
+        ]
+    },
+    "token": "Token 9ec5e1836c4ff0726d2380037fcabc1281cd898f"
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/user/
+================================================================================
+Method for retrieve all users.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/user/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 4,
+        "first_name": "",
+        "last_name": "",
+        "email": "test@gmailc.om",
+        "stripe_customer_id": "cus_HhS1c8WgVzppj0"
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/user/?limit=10&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 4,
+            "first_name": "",
+            "last_name": "",
+            "email": "test@gmailc.om",
+            "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+            "signature_courses": [],
+            "favorite_teachers": [
+                {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                }
+            ],
+            "favorite_courses": [
+                {
+                    "id": 1,
+                    "title": "course title",
+                    "description": "descrrriiiption number one!",
+                    "overview": "short owerview",
+                    "category": {
+                        "id": 1,
+                        "title": "Category #1",
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    },
+                    "teacher": {
+                        "id": 1,
+                        "first_name": "Lina",
+                        "last_name": "Koctenko",
+                        "description": "poetic",
+                        "avatar": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "facebook": null,
+                        "instagram": null,
+                        "location": null,
+                        "promo_files": [
+                            {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        ],
+                        "promo_videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ]
+                    },
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ],
+                    "created_at": "2020-11-12T20:34:15.699535Z",
+                    "updated_at": "2020-11-12T20:34:15.732636Z"
+                }
+            ],
+            "favorite_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ],
+            "is_viewed_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ],
+            "favorite_collections": [
+                {
+                    "id": 1,
+                    "title": "first title",
+                    "description": "descrrriiiption qwerty",
+                    "is_favorite": false,
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "courses": [
+                        {
+                            "id": 1,
+                            "title": "course title",
+                            "description": "descrrriiiption number one!",
+                            "overview": "short owerview",
+                            "category": {
+                                "id": 1,
+                                "title": "Category #1",
+                                "image": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                }
+                            },
+                            "teacher": {
+                                "id": 1,
+                                "first_name": "Lina",
+                                "last_name": "Koctenko",
+                                "description": "poetic",
+                                "avatar": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "facebook": null,
+                                "instagram": null,
+                                "location": null,
+                                "promo_files": [
+                                    {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    }
+                                ],
+                                "promo_videos": [
+                                    {
+                                        "id": 1,
+                                        "title": "video #1",
+                                        "description": "asd",
+                                        "file720p": {
+                                            "id": 1,
+                                            "title": "tttiiittlleeee image",
+                                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                            "created_at": "2020-11-12T17:23:14Z"
+                                        },
+                                        "file1080p": {
+                                            "id": 1,
+                                            "title": "tttiiittlleeee image",
+                                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                            "created_at": "2020-11-12T17:23:14Z"
+                                        },
+                                        "thumbnail": {
+                                            "id": 1,
+                                            "title": "tttiiittlleeee image",
+                                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                            "created_at": "2020-11-12T17:23:14Z"
+                                        },
+                                        "course": 1
+                                    }
+                                ]
+                            },
+                            "image": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "videos": [
+                                {
+                                    "id": 1,
+                                    "title": "video #1",
+                                    "description": "asd",
+                                    "file720p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "file1080p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "thumbnail": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "course": 1
+                                }
+                            ],
+                            "created_at": "2020-11-12T20:34:15.699535Z",
+                            "updated_at": "2020-11-12T20:34:15.732636Z"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+  }
+
+
+POST /api/v1/user/login/
+================================================================================
+Method for login as user.
+Authentication token not need.
+
+Required fields:
+------------------
+- ``email``
+- ``password``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/login/``
+
+.. code-block:: json
+
+  {
+      "email": "admin@gmail.com",
+      "password": "qwerty"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "user": {
+        "id": 3,
+        "first_name": "First",
+        "last_name": "Last",
+        "email": "admin@gmail.com",
+        "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+        "signature_courses": [],
+        "favorite_teachers": [
+            {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            }
+        ],
+        "favorite_courses": [
+            {
+                "id": 1,
+                "title": "course title",
+                "description": "descrrriiiption number one!",
+                "overview": "short owerview",
+                "category": {
+                    "id": 1,
+                    "title": "Category #1",
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                },
+                "teacher": {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                },
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ],
+                "created_at": "2020-11-12T20:34:15.699535Z",
+                "updated_at": "2020-11-12T20:34:15.732636Z"
+            }
+        ],
+        "favorite_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "is_viewed_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "favorite_collections": [
+            {
+                "id": 1,
+                "title": "first title",
+                "description": "descrrriiiption qwerty",
+                "is_favorite": false,
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "courses": [
+                    {
+                        "id": 1,
+                        "title": "course title",
+                        "description": "descrrriiiption number one!",
+                        "overview": "short owerview",
+                        "category": {
+                            "id": 1,
+                            "title": "Category #1",
+                            "image": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        },
+                        "teacher": {
+                            "id": 1,
+                            "first_name": "Lina",
+                            "last_name": "Koctenko",
+                            "description": "poetic",
+                            "avatar": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "facebook": null,
+                            "instagram": null,
+                            "location": null,
+                            "promo_files": [
+                                {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                }
+                            ],
+                            "promo_videos": [
+                                {
+                                    "id": 1,
+                                    "title": "video #1",
+                                    "description": "asd",
+                                    "file720p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "file1080p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "thumbnail": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "course": 1
+                                }
+                            ]
+                        },
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ],
+                        "created_at": "2020-11-12T20:34:15.699535Z",
+                        "updated_at": "2020-11-12T20:34:15.732636Z"
+                    }
+                ]
+            }
+        ]
+    },
+    "token": "Token dc3bc0606cc3c26f31f8160dca509df37fff19a9"
+  }
+
+
+POST /api/v1/user/login/facebook/
+================================================================================
+Method for login as user.
+Authentication token not need.
+
+Required fields:
+------------------
+- ``access_token``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/login/facebook/``
+
+.. code-block:: json
+
+  {
+    "access_token": "EAAFj2tKtZB14BADXR5ZCMyRD60m88OyUboBLO4DA33ZA5ZCIWz311ZC7vZCJAVB3NsQ0wAps9c2FU7oMMAnXZA4EZADvo9mDK0aqKUZByAtNHZBj7ZCA3IStPUx3TEPLMThtjAw35hb1FxBq4916o6mzR9OFzUHLSUWhfDRzLJcajBes13UrbxwISUb3OgSWssOGyZCi6wFu7ddkChmFmEZBN5nkG"
+  }
+
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "user": {
+        "id": 5,
+        "first_name": "Lisa",
+        "last_name": "Fallerberg",
+        "email": "uusbcbyxgm_1604252905@tfbnw.net",
+        "stripe_customer_id": null,
+        "signature_courses": [],
+        "favorite_teachers": [
+            {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            }
+        ],
+        "favorite_courses": [
+            {
+                "id": 1,
+                "title": "course title",
+                "description": "descrrriiiption number one!",
+                "overview": "short owerview",
+                "category": {
+                    "id": 1,
+                    "title": "Category #1",
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                },
+                "teacher": {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                },
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ],
+                "created_at": "2020-11-12T20:34:15.699535Z",
+                "updated_at": "2020-11-12T20:34:15.732636Z"
+            }
+        ],
+        "favorite_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "is_viewed_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "favorite_collections": [
+            {
+                "id": 1,
+                "title": "first title",
+                "description": "descrrriiiption qwerty",
+                "is_favorite": false,
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "courses": [
+                    {
+                        "id": 1,
+                        "title": "course title",
+                        "description": "descrrriiiption number one!",
+                        "overview": "short owerview",
+                        "category": {
+                            "id": 1,
+                            "title": "Category #1",
+                            "image": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        },
+                        "teacher": {
+                            "id": 1,
+                            "first_name": "Lina",
+                            "last_name": "Koctenko",
+                            "description": "poetic",
+                            "avatar": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "facebook": null,
+                            "instagram": null,
+                            "location": null,
+                            "promo_files": [
+                                {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                }
+                            ],
+                            "promo_videos": [
+                                {
+                                    "id": 1,
+                                    "title": "video #1",
+                                    "description": "asd",
+                                    "file720p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "file1080p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "thumbnail": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "course": 1
+                                }
+                            ]
+                        },
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ],
+                        "created_at": "2020-11-12T20:34:15.699535Z",
+                        "updated_at": "2020-11-12T20:34:15.732636Z"
+                    }
+                ]
+            }
+        ]
+
+    },
+    "token": "Token 5cb7bbae2e608be61f13e647c326de9ed7778444"
+  }
+
+
+POST /api/v1/user/registration/
+================================================================================
+Method for registration new user.
+Authentication token not need.
+
+Required fields:
+------------------
+- ``email``
+- ``password``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/registration/``
+
+.. code-block:: json
+
+  {
+	"first_name": "Serhii_002",
+	"email": "serhii003@gmail.com",
+	"password": "11111"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "user": {
+        "id": 9,
+        "first_name": "Serhii_002",
+        "last_name": "",
+        "email": "serhii003@gmail.com",
+        "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+        "signature_courses": [],
+        "favorite_teachers": [
+            {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            }
+        ],
+        "favorite_courses": [
+            {
+                "id": 1,
+                "title": "course title",
+                "description": "descrrriiiption number one!",
+                "overview": "short owerview",
+                "category": {
+                    "id": 1,
+                    "title": "Category #1",
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                },
+                "teacher": {
+                    "id": 1,
+                    "first_name": "Lina",
+                    "last_name": "Koctenko",
+                    "description": "poetic",
+                    "avatar": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "facebook": null,
+                    "instagram": null,
+                    "location": null,
+                    "promo_files": [
+                        {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    ],
+                    "promo_videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ]
+                },
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ],
+                "created_at": "2020-11-12T20:34:15.699535Z",
+                "updated_at": "2020-11-12T20:34:15.732636Z"
+            }
+        ],
+        "favorite_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "is_viewed_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ],
+        "favorite_collections": [
+            {
+                "id": 1,
+                "title": "first title",
+                "description": "descrrriiiption qwerty",
+                "is_favorite": false,
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "courses": [
+                    {
+                        "id": 1,
+                        "title": "course title",
+                        "description": "descrrriiiption number one!",
+                        "overview": "short owerview",
+                        "category": {
+                            "id": 1,
+                            "title": "Category #1",
+                            "image": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        },
+                        "teacher": {
+                            "id": 1,
+                            "first_name": "Lina",
+                            "last_name": "Koctenko",
+                            "description": "poetic",
+                            "avatar": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "facebook": null,
+                            "instagram": null,
+                            "location": null,
+                            "promo_files": [
+                                {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                }
+                            ],
+                            "promo_videos": [
+                                {
+                                    "id": 1,
+                                    "title": "video #1",
+                                    "description": "asd",
+                                    "file720p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "file1080p": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "thumbnail": {
+                                        "id": 1,
+                                        "title": "tttiiittlleeee image",
+                                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                        "created_at": "2020-11-12T17:23:14Z"
+                                    },
+                                    "course": 1
+                                }
+                            ]
+                        },
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ],
+                        "created_at": "2020-11-12T20:34:15.699535Z",
+                        "updated_at": "2020-11-12T20:34:15.732636Z"
+                    }
+                ]
+            }
+        ]
+    },
+    "token": "Token fdf3a2094a720c9a3b71154b7b4fb88d35f83f2d"
+  }
+
+
+POST /api/v1/user/logout/
+================================================================================
+Method for logout. After logout Token will removed.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/logout/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+
+POST /api/v1/user/password/reset/
+===================================
+Method for reset self password.
+If status code ``200`` - method sent email with link for password setup.
+
+Required fields:
+------------------
+- ``email``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/user/password/reset/``
+
+.. code-block:: json
+
+  {
+    "email": "qwerty@gmail.com"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+
+GET /api/v1/user/global_search/
+================================================================================
+Global search. Required parameter: `search_value`
+
+Default ordering by `id`.
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8000/api/v1/user/global_search/?search_value=first``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "teachers": [],
+    "collections": [
+        {
+            "id": 1,
+            "title": "first title",
+            "description": "descrrriiiption qwerty",
+            "is_favorite": false,
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "courses": [
+                {
+                    "id": 1,
+                    "title": "course title",
+                    "description": "descrrriiiption number one!",
+                    "overview": "short owerview",
+                    "category": {
+                        "id": 1,
+                        "title": "Category #1",
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    },
+                    "teacher": {
+                        "id": 1,
+                        "first_name": "Lina",
+                        "last_name": "Koctenko",
+                        "description": "poetic",
+                        "avatar": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "facebook": null,
+                        "instagram": null,
+                        "location": null,
+                        "promo_files": [
+                            {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        ],
+                        "promo_videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ]
+                    },
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ],
+                    "created_at": "2020-11-12T20:34:15.699535Z",
+                    "updated_at": "2020-11-12T20:34:15.732636Z"
+                }
+            ]
+        }
+    ],
+    "categories": [],
+    "courses": []
+  }
+
+
+GET /api/v1/user/<id>/
+================================================================================
+Method for retrieve user by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/user/3/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 3,
+    "first_name": "Serhii_002",
+    "last_name": "Qwed",
+    "email": "serhii002@gmail.com",
+    "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+    "signature_courses": [],
+    "favorite_teachers": [
+        {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ]
+        }
+    ],
+    "favorite_courses": [
+        {
+            "id": 1,
+            "title": "course title",
+            "description": "descrrriiiption number one!",
+            "overview": "short owerview",
+            "category": {
+                "id": 1,
+                "title": "Category #1",
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            },
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ],
+            "created_at": "2020-11-12T20:34:15.699535Z",
+            "updated_at": "2020-11-12T20:34:15.732636Z"
+        }
+    ],
+    "favorite_videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "is_viewed_videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "favorite_collections": [
+        {
+            "id": 1,
+            "title": "first title",
+            "description": "descrrriiiption qwerty",
+            "is_favorite": false,
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "courses": [
+                {
+                    "id": 1,
+                    "title": "course title",
+                    "description": "descrrriiiption number one!",
+                    "overview": "short owerview",
+                    "category": {
+                        "id": 1,
+                        "title": "Category #1",
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    },
+                    "teacher": {
+                        "id": 1,
+                        "first_name": "Lina",
+                        "last_name": "Koctenko",
+                        "description": "poetic",
+                        "avatar": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "facebook": null,
+                        "instagram": null,
+                        "location": null,
+                        "promo_files": [
+                            {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        ],
+                        "promo_videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ]
+                    },
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ],
+                    "created_at": "2020-11-12T20:34:15.699535Z",
+                    "updated_at": "2020-11-12T20:34:15.732636Z"
+                }
+            ]
+        }
+    ]
+
+  }
+
+
+PUT /api/v1/user/<id>/
+================================================================================
+Method for update user by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``email``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/user/4/``
+
+.. code-block:: json
+
+  {
+	"first_name": "Serhii_002",
+	"email": "serhii002@gmail.com"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 3,
+    "first_name": "Serhii_002",
+    "last_name": "Qwed",
+    "email": "serhii002@gmail.com",
+    "stripe_customer_id": "cus_HhS1c8WgVzppj0",
+    "signature_courses": [],
+    "favorite_teachers": [
+        {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ]
+        }
+    ],
+    "favorite_courses": [
+        {
+            "id": 1,
+            "title": "course title",
+            "description": "descrrriiiption number one!",
+            "overview": "short owerview",
+            "category": {
+                "id": 1,
+                "title": "Category #1",
+                "image": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            },
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ],
+            "created_at": "2020-11-12T20:34:15.699535Z",
+            "updated_at": "2020-11-12T20:34:15.732636Z"
+        }
+    ],
+    "favorite_videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "is_viewed_videos": [
+        {
+            "id": 1,
+            "title": "video #1",
+            "description": "asd",
+            "file720p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "file1080p": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "course": 1
+        }
+    ],
+    "favorite_collections": [
+        {
+            "id": 1,
+            "title": "first title",
+            "description": "descrrriiiption qwerty",
+            "is_favorite": false,
+            "image": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "courses": [
+                {
+                    "id": 1,
+                    "title": "course title",
+                    "description": "descrrriiiption number one!",
+                    "overview": "short owerview",
+                    "category": {
+                        "id": 1,
+                        "title": "Category #1",
+                        "image": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        }
+                    },
+                    "teacher": {
+                        "id": 1,
+                        "first_name": "Lina",
+                        "last_name": "Koctenko",
+                        "description": "poetic",
+                        "avatar": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "facebook": null,
+                        "instagram": null,
+                        "location": null,
+                        "promo_files": [
+                            {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            }
+                        ],
+                        "promo_videos": [
+                            {
+                                "id": 1,
+                                "title": "video #1",
+                                "description": "asd",
+                                "file720p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "file1080p": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "thumbnail": {
+                                    "id": 1,
+                                    "title": "tttiiittlleeee image",
+                                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                    "created_at": "2020-11-12T17:23:14Z"
+                                },
+                                "course": 1
+                            }
+                        ]
+                    },
+                    "image": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "videos": [
+                        {
+                            "id": 1,
+                            "title": "video #1",
+                            "description": "asd",
+                            "file720p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "file1080p": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "thumbnail": {
+                                "id": 1,
+                                "title": "tttiiittlleeee image",
+                                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                                "created_at": "2020-11-12T17:23:14Z"
+                            },
+                            "course": 1
+                        }
+                    ],
+                    "created_at": "2020-11-12T20:34:15.699535Z",
+                    "updated_at": "2020-11-12T20:34:15.732636Z"
+                }
+            ]
+        }
+    ]
+
+  }

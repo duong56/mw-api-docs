@@ -1,0 +1,410 @@
+Teacher API documentation (``/api/v1/teacher/..``)
+********************************************************************************
+
+
+POST /api/v1/teacher/
+================================================================================
+Method for create new teacher.
+
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/teacher/``
+
+.. code-block:: json
+
+  {
+    "first_name": "Tom",
+    "last_name": "Anderson",
+    "description": "Description text",
+    "avatar": 1
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "first_name": "Lina",
+    "last_name": "Koctenko",
+    "description": "poetic",
+    "avatar": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "facebook": null,
+    "instagram": null,
+    "location": null,
+    "courses_count": 1,
+    "promo_files": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ],
+    "promo_videos": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ]
+  }
+
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/teacher/
+================================================================================
+Method for retrieve all teachers.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/teacher/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "facebook": null,
+        "instagram": null,
+        "location": null,
+        "promo_files": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ],
+        "courses_count": 1,
+        "promo_videos": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ]
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/teacher/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 3,
+    "next": "http://127.0.0.1:8007/api/v1/teacher/?limit=1&offset=1",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "courses_count": 1,
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ]
+        }
+      ]
+  }
+
+
+GET /api/v1/teacher/search/
+================================================================================
+Method for retrieve all teachers. Required parameter: `search_value`
+
+Default ordering by `id`.
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8000/api/v1/teacher/search/?search_value=ina``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "facebook": null,
+        "instagram": null,
+        "location": null,
+        "promo_files": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ],
+        "courses_count": 1,
+        "promo_videos": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ]
+    }
+  ]
+
+
+GET /api/v1/teacher/<id>/
+================================================================================
+Method for retrieve teacher by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/teacher/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "first_name": "Lina",
+    "last_name": "Koctenko",
+    "description": "poetic",
+    "avatar": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "facebook": null,
+    "instagram": null,
+    "location": null,
+    "promo_files": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ],
+    "courses_count": 1,
+    "promo_videos": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ]
+  }
+
+
+PUT /api/v1/teacher/<id>/
+================================================================================
+Method for update teacher by id.
+Also possible partial update.
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/teacher/1/``
+
+.. code-block:: json
+
+  {
+    "first_name": "Tom2"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "first_name": "Tom2",
+    "last_name": "Koctenko",
+    "description": "poetic",
+    "avatar": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "facebook": null,
+    "instagram": null,
+    "location": null,
+    "promo_files": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ],
+    "courses_count": 1,
+    "promo_videos": [
+        {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        }
+    ]
+  }
+
+
+DELETE /api/v1/teacher/<id>/
+================================================================================
+Method for remove teacher by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/teacher/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+

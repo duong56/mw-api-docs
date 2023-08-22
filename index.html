@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Majestic Woman API documentation! &#8212; Majestic Woman  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User API documentation (/api/v1/user/..)" href="source/users.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-majestic-woman-api-documentation">
+<h1>Welcome to Majestic Woman API documentation!<a class="headerlink" href="#welcome-to-majestic-woman-api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="authentication">
+<h2>Authentication:<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>For clients to authenticate, the token key should be included in the
+Authorization HTTP header.
+The key should be prefixed by the string literal <strong>Token</strong>,
+with whitespace separating the two strings.</p>
+<p><em>For example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Authorization</span><span class="p">:</span> <span class="n">Token</span> <span class="n">e944b09199c62bcf9418ad846dd0e4bbdfc6ee4b</span>
+</pre></div>
+</div>
+<p>Unauthenticated responses that are denied permission will result in an
+<code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">401</span> <span class="pre">Unauthorized</span></code> response with an appropriate WWW-Authenticate header.</p>
+<p><em>For example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WWW</span><span class="o">-</span><span class="n">Authenticate</span><span class="p">:</span> <span class="n">Token</span>
+</pre></div>
+</div>
+<p>The <strong>curl</strong> command line tool may be useful for testing token authenticated
+APIs.</p>
+<p><em>For example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8001</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">user</span><span class="o">/</span>
+<span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Token e942b09199c63bcf9418ad846dd0e4bbdfc6ee4b&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="contents">
+<h1>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source/users.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user">POST /api/v1/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#get-api-v1-user">GET /api/v1/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user-login">POST /api/v1/user/login/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user-login-facebook">POST /api/v1/user/login/facebook/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user-registration">POST /api/v1/user/registration/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user-logout">POST /api/v1/user/logout/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#post-api-v1-user-password-reset">POST /api/v1/user/password/reset/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#get-api-v1-user-global-search">GET /api/v1/user/global_search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#get-api-v1-user-id">GET /api/v1/user/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users.html#put-api-v1-user-id">PUT /api/v1/user/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/files.html">File API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/file/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/files.html#post-api-v1-file">POST /api/v1/file/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/files.html#get-api-v1-file">GET /api/v1/file/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/files.html#get-api-v1-file-id">GET /api/v1/file/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/files.html#delete-api-v1-file-id">DELETE /api/v1/file/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/categories.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/category/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#post-api-v1-category">POST /api/v1/category/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#get-api-v1-category">GET /api/v1/category/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#get-api-v1-category-search">GET /api/v1/category/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#get-api-v1-category-id">GET /api/v1/category/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#put-api-v1-category-id">PUT /api/v1/category/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/categories.html#delete-api-v1-category-id">DELETE /api/v1/category/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/teachers.html">Teacher API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/teacher/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#post-api-v1-teacher">POST /api/v1/teacher/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#get-api-v1-teacher">GET /api/v1/teacher/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#get-api-v1-teacher-search">GET /api/v1/teacher/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#get-api-v1-teacher-id">GET /api/v1/teacher/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#put-api-v1-teacher-id">PUT /api/v1/teacher/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/teachers.html#delete-api-v1-teacher-id">DELETE /api/v1/teacher/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/videos.html">Video API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/videos.html#post-api-v1-video">POST /api/v1/video/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/videos.html#get-api-v1-video">GET /api/v1/video/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/videos.html#get-api-v1-video-id">GET /api/v1/video/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/videos.html#put-api-v1-video-id">PUT /api/v1/video/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/videos.html#delete-api-v1-video-id">DELETE /api/v1/video/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/courses.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/course/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#post-api-v1-course">POST /api/v1/course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#get-api-v1-course">GET /api/v1/course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#get-api-v1-course-search">GET /api/v1/course/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#get-api-v1-course-id">GET /api/v1/course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#put-api-v1-course-id">PUT /api/v1/course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses.html#delete-api-v1-course-id">DELETE /api/v1/course/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/signature_courses.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#post-api-v1-signature-course">POST /api/v1/signature_course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#get-api-v1-signature-course">GET /api/v1/signature_course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#get-api-v1-signature-course-search">GET /api/v1/signature_course/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#get-api-v1-signature-course-id">GET /api/v1/signature_course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#put-api-v1-signature-course-id">PUT /api/v1/signature_course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#delete-api-v1-signature-course-id">DELETE /api/v1/signature_course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#post-api-v1-signature-course-id-buy">POST /api/v1/signature_course/&lt;id&gt;/buy/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses.html#post-api-v1-signature-course-id-stripe-buy">POST /api/v1/signature_course/&lt;id&gt;/stripe_buy/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/collections.html">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#post-api-v1-collection">POST /api/v1/collection/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#get-api-v1-collection">GET /api/v1/collection/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#get-api-v1-collection-search">GET /api/v1/collection/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#get-api-v1-collection-id">GET /api/v1/collection/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#put-api-v1-collection-id">PUT /api/v1/collection/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/collections.html#delete-api-v1-collection-id">DELETE /api/v1/collection/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/stripes.html">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/stripes.html#post-api-v1-stripe-ephemeral-key">POST /api/v1/stripe/ephemeral_key/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/stripes.html#get-api-v1-stripe-plan">GET /api/v1/stripe/plan/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/stripes.html#get-api-v1-stripe-subscription">GET /api/v1/stripe/subscription/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/stripes.html#post-api-v1-stripe-subscription">POST /api/v1/stripe/subscription/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/live_classes.html">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/live_classes.html#post-api-v1-live-class">POST /api/v1/live_class/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/live_classes.html#get-api-v1-live-class">GET /api/v1/live_class/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/live_classes.html#get-api-v1-live-class-id">GET /api/v1/live_class/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/live_classes.html#put-api-v1-live-class-id">PUT /api/v1/live_class/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/live_classes.html#delete-api-v1-live-class-id">DELETE /api/v1/live_class/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/challenges.html">Challenge API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/challenge/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#post-api-v1-challenge">POST /api/v1/challenge/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge">GET /api/v1/challenge/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge-id">GET /api/v1/challenge/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#put-api-v1-challenge-id">PUT /api/v1/challenge/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#delete-api-v1-challenge-id">DELETE /api/v1/challenge/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#post-api-v1-challenge-condition">POST /api/v1/challenge/condition/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge-condition">GET /api/v1/challenge/condition/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge-condition-id">GET /api/v1/challenge/condition/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#put-api-v1-challenge-condition-id">PUT /api/v1/challenge/condition/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#delete-api-v1-challenge-condition-id">DELETE /api/v1/challenge/condition/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#post-api-v1-challenge-request">POST /api/v1/challenge/request/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge-request">GET /api/v1/challenge/request/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#get-api-v1-challenge-request-id">GET /api/v1/challenge/request/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#put-api-v1-challenge-request-id">PUT /api/v1/challenge/request/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/challenges.html#delete-api-v1-challenge-request-id">DELETE /api/v1/challenge/request/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/reminders.html">Reminder API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/reminder/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/reminders.html#post-api-v1-reminder">POST /api/v1/reminder/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/reminders.html#get-api-v1-reminder">GET /api/v1/reminder/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/reminders.html#get-api-v1-reminder-id">GET /api/v1/reminder/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/reminders.html#put-api-v1-reminder-id">PUT /api/v1/reminder/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/reminders.html#delete-api-v1-reminder-id">DELETE /api/v1/reminder/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/courses_v2.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/course/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-course">POST /api/v2/course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-course">GET /api/v2/course/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-course-id">GET /api/v2/course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#put-api-v2-course-id">PUT /api/v2/course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#delete-api-v2-course-id">DELETE /api/v2/course/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-course-id-buy">POST /api/v2/course/&lt;id&gt;/buy/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-course-id-stripe-buy">POST /api/v2/course/&lt;id&gt;/stripe_buy/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-course-id-lessons">GET /api/v2/course/&lt;id&gt;/lessons/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#put-api-v2-course-id-favorite">PUT /api/v2/course/&lt;id&gt;/favorite/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#put-api-v2-course-id-status">PUT /api/v2/course/&lt;id&gt;/status/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-purchased-courses">GET /api/v2/purchased_courses/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-favorite-courses">GET /api/v2/favorite_courses/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#get-api-v2-started-courses">GET /api/v2/started_courses/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-course-buy">POST /api/v2/course/buy/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-course-stripe-buy">POST /api/v2/course/stripe_buy/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/courses_v2.html#post-api-v2-free-lessons">POST /api/v2/free_lessons/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/signature_courses_v2.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses_v2.html#get-api-v2-signature-course-overview">GET /api/v2/signature_course_overview/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses_v2.html#get-api-v2-purchased-signature-courses">GET /api/v2/purchased_signature_courses/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses_v2.html#get-api-v2-favorite-signature-courses">GET /api/v2/favorite_signature_courses/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/signature_courses_v2.html#put-api-v2-signature-course-id">PUT /api/v2/signature_course/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/users_v2.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#get-api-v2-user-id-payment-history">GET /api/v2/user/&lt;id&gt;/payment_history/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#put-api-v2-user-id-premium">PUT /api/v2/user/&lt;id&gt;/premium/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user">POST /api/v2/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#get-api-v2-user">GET /api/v2/user/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#put-api-v2-user-id">PUT /api/v2/user/&lt;id&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-verify">POST /api/v2/user/verify/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-send-verify-code">POST /api/v2/user/send_verify_code/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-login">POST /api/v2/user/login/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-change-password">POST /api/v2/user/change_password/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-reset-password">POST /api/v2/user/reset_password/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/users_v2.html#post-api-v2-user-reset-password-done">POST /api/v2/user/reset_password_done/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/coupon.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/coupon.html#get-api-v2-coupon-code">GET /api/v2/coupon/&lt;code&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/coupon.html#get-api-v2-coupon-current-bundle-sale">GET /api/v2/coupon/current_bundle_sale</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/rates.html">Rate Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/rate_course/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/rates.html#post-api-v2-rate-courses">POST /api/v2/rate_courses/</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Majestic Woman</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source/users.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/files.html">File API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/file/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/categories.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/category/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/teachers.html">Teacher API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/teacher/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/videos.html">Video API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/courses.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/signature_courses.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/collections.html">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/stripes.html">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/live_classes.html">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/challenges.html">Challenge API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/challenge/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/reminders.html">Reminder API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/reminder/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/courses_v2.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/signature_courses_v2.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/users_v2.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/coupon.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/rates.html">Rate Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/rate_course/..</span></code>)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="source/users.html" title="next chapter">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Muravko Serhii.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

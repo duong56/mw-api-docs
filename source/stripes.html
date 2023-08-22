@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stripe API documentation (/api/v1/stripe/..) &#8212; Majestic Woman  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LiveClass API documentation (/api/v1/video/..)" href="live_classes.html" />
+    <link rel="prev" title="Collection API documentation (/api/v1/collection/..)" href="collections.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="stripe-api-documentation-api-v1-stripe">
+<h1>Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)<a class="headerlink" href="#stripe-api-documentation-api-v1-stripe" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="post-api-v1-stripe-ephemeral-key">
+<h2>POST /api/v1/stripe/ephemeral_key/<a class="headerlink" href="#post-api-v1-stripe-ephemeral-key" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve ephemeral key from stripe.</p>
+<div class="section" id="required-fields">
+<h3>Required fields:<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stripe_version</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v1/stripe/ephemeral_key/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;stripe_version&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-02&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ephkey_1H87piGZSCQQwUgn4XJXYbiO&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;object&quot;</span><span class="p">:</span> <span class="s2">&quot;ephemeral_key&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;associated_objects&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;customer&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;cus_HhWecWRQURYwSI&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="mi">1595523830</span><span class="p">,</span>
+  <span class="nt">&quot;expires&quot;</span><span class="p">:</span> <span class="mi">1595527430</span><span class="p">,</span>
+  <span class="nt">&quot;livemode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;secret&quot;</span><span class="p">:</span> <span class="s2">&quot;ek_test_YWNjdF8xR0dWWlFHWlNDUVF3VWduLGVrVXVyOVdTNnZBWHBzWmEwNFoxWW1qNnVsdzVRcG8_00w3I92Rig&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 201 Created.</p>
+</div>
+</div>
+</div>
+<div class="section" id="get-api-v1-stripe-plan">
+<h2>GET /api/v1/stripe/plan/<a class="headerlink" href="#get-api-v1-stripe-plan" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve all plans from stripe (by limit 3).</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v1/stripe/plan/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;price_1H83HCGZSCQQwUgn48ckcRlz&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;object&quot;</span><span class="p">:</span> <span class="s2">&quot;plan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;aggregate_usage&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+      <span class="nt">&quot;amount_decimal&quot;</span><span class="p">:</span> <span class="s2">&quot;10000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;billing_scheme&quot;</span><span class="p">:</span> <span class="s2">&quot;per_unit&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="mi">1595506314</span><span class="p">,</span>
+      <span class="nt">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;interval&quot;</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;interval_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;livemode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;nickname&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;prod_HhSBhZrN3hqPr9&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tiers&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tiers_mode&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;transform_usage&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;trial_period_days&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;usage_type&quot;</span><span class="p">:</span> <span class="s2">&quot;licensed&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;price_1H83GWGZSCQQwUgnwoWlKVTs&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;object&quot;</span><span class="p">:</span> <span class="s2">&quot;plan&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;active&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;aggregate_usage&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+      <span class="nt">&quot;amount_decimal&quot;</span><span class="p">:</span> <span class="s2">&quot;3000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;billing_scheme&quot;</span><span class="p">:</span> <span class="s2">&quot;per_unit&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="mi">1595506272</span><span class="p">,</span>
+      <span class="nt">&quot;currency&quot;</span><span class="p">:</span> <span class="s2">&quot;usd&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;interval&quot;</span><span class="p">:</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;interval_count&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;livemode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+      <span class="nt">&quot;nickname&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;prod_HhSAXfBrTEpdH7&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;tiers&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;tiers_mode&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;transform_usage&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;trial_period_days&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;usage_type&quot;</span><span class="p">:</span> <span class="s2">&quot;licensed&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-api-v1-stripe-subscription">
+<h2>GET /api/v1/stripe/subscription/<a class="headerlink" href="#get-api-v1-stripe-subscription" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve all subscriptions from stripe (limit 100).</p>
+<p>Optional filter by <cite>status</cite> as GET parameter.
+One of: incomplete, incomplete_expired, trialing, active, past_due, unpaid,
+canceled, or all.
+By default value: <cite>all</cite></p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v1/stripe/subscription/?status=active</span></code></p>
+</div>
+<div class="section" id="post-api-v1-stripe-subscription">
+<h2>POST /api/v1/stripe/subscription/<a class="headerlink" href="#post-api-v1-stripe-subscription" title="Permalink to this headline">¶</a></h2>
+<p>Method for create stripe subscription.</p>
+<div class="section" id="id1">
+<h3>Required fields:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">item_price</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default_payment_method</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v1/stripe/subscription/</span></code></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Majestic Woman</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="users.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">File API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/file/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/category/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachers.html">Teacher API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/teacher/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">Video API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v1-stripe-ephemeral-key">POST /api/v1/stripe/ephemeral_key/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v1-stripe-plan">GET /api/v1/stripe/plan/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v1-stripe-subscription">GET /api/v1/stripe/subscription/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v1-stripe-subscription">POST /api/v1/stripe/subscription/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="live_classes.html">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenge API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/challenge/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reminders.html">Reminder API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/reminder/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses_v2.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses_v2.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users_v2.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupon.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rates.html">Rate Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/rate_course/..</span></code>)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="collections.html" title="previous chapter">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a></li>
+      <li>Next: <a href="live_classes.html" title="next chapter">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Muravko Serhii.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/stripes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

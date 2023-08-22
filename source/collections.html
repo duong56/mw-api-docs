@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Collection API documentation (/api/v1/collection/..) &#8212; Majestic Woman  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Stripe API documentation (/api/v1/stripe/..)" href="stripes.html" />
+    <link rel="prev" title="Signature Course API documentation (/api/v1/signature_course/..)" href="signature_courses.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="collection-api-documentation-api-v1-collection">
+<h1>Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)<a class="headerlink" href="#collection-api-documentation-api-v1-collection" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="post-api-v1-collection">
+<h2>POST /api/v1/collection/<a class="headerlink" href="#post-api-v1-collection" title="Permalink to this headline">¶</a></h2>
+<p>Method for create new collection.</p>
+<div class="section" id="required-fields">
+<h3>Required fields:<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;qwrety&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first title&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 201 Created.</p>
+</div>
+</div>
+</div>
+<div class="section" id="get-api-v1-collection">
+<h2>GET /api/v1/collection/<a class="headerlink" href="#get-api-v1-collection" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve all collections.</p>
+<p><em>Possible filters:</em></p>
+<ul class="simple">
+<li><p><cite>teacher</cite>, integer (<em>12</em>)</p></li>
+</ul>
+<p><strong>Example: (without pagination)</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first title&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">}</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">}</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                  <span class="p">}</span>
+              <span class="p">]</span>
+          <span class="p">}</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Example: (with pagination and filter)</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/?limit=1&amp;offset=0&amp;category=1</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/api/v1/collection/?limit=1&amp;offset=1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;previous&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first title&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">}</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                      <span class="p">}</span>
+                  <span class="p">]</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-api-v1-collection-search">
+<h2>GET /api/v1/collection/search/<a class="headerlink" href="#get-api-v1-collection-search" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve all collections. Required parameter: <cite>search_value</cite></p>
+<p>Default ordering by <cite>id</cite>.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8000/api/v1/collection/search/?search_value=tit</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first title&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">}</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;facebook&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;instagram&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                  <span class="nt">&quot;promo_files&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">}</span>
+                  <span class="p">],</span>
+                  <span class="nt">&quot;promo_videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                      <span class="p">}</span>
+                  <span class="p">]</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                          <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                      <span class="p">},</span>
+                      <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                  <span class="p">}</span>
+              <span class="p">],</span>
+              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T20:34:15.699535Z&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T20:34:15.732636Z&quot;</span>
+          <span class="p">}</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-api-v1-collection-id">
+<h2>GET /api/v1/collection/&lt;id&gt;/<a class="headerlink" href="#get-api-v1-collection-id" title="Permalink to this headline">¶</a></h2>
+<p>Method for retrieve collection by id.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/1/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first title&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-api-v1-collection-id">
+<h2>PUT /api/v1/collection/&lt;id&gt;/<a class="headerlink" href="#put-api-v1-collection-id" title="Permalink to this headline">¶</a></h2>
+<p>Method for update collection by id.
+Also possible partial update.</p>
+<div class="section" id="id1">
+<h3>Required fields:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/1/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first sub&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;first sub&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption qwerty&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;is_favorite&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;courses&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;course title&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;descrrriiiption number one!&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;short owerview&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Category #1&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;teacher&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lina&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koctenko&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;poetic&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;image&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;videos&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;video #1&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;asd&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;file720p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;file1080p&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;tttiiittlleeee image&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg&quot;</span><span class="p">,</span>
+                      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-11-12T17:23:14Z&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;course&quot;</span><span class="p">:</span> <span class="mi">1</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete-api-v1-collection-id">
+<h2>DELETE /api/v1/collection/&lt;id&gt;/<a class="headerlink" href="#delete-api-v1-collection-id" title="Permalink to this headline">¶</a></h2>
+<p>Method for remove collection by id.</p>
+<p><strong>Example:</strong></p>
+<p><em>Request:</em></p>
+<p><em>URL:</em>
+<code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">http://127.0.0.1:8001/api/v1/collection/1/</span></code></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Response:</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Status - 204 No Content</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Majestic Woman</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="users.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">File API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/file/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/category/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachers.html">Teacher API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/teacher/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">Video API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Collection API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/collection/..</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#post-api-v1-collection">POST /api/v1/collection/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v1-collection">GET /api/v1/collection/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v1-collection-search">GET /api/v1/collection/search/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-api-v1-collection-id">GET /api/v1/collection/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#put-api-v1-collection-id">PUT /api/v1/collection/&lt;id&gt;/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-api-v1-collection-id">DELETE /api/v1/collection/&lt;id&gt;/</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stripes.html">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_classes.html">LiveClass API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/video/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenge API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/challenge/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reminders.html">Reminder API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/reminder/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="courses_v2.html">Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature_courses_v2.html">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/signature_course/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users_v2.html">User API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/user/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupon.html">Category API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/coupon/..</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rates.html">Rate Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v2/rate_course/..</span></code>)</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="signature_courses.html" title="previous chapter">Signature Course API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/signature_course/..</span></code>)</a></li>
+      <li>Next: <a href="stripes.html" title="next chapter">Stripe API documentation (<code class="docutils literal notranslate"><span class="pre">/api/v1/stripe/..</span></code>)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Muravko Serhii.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/collections.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

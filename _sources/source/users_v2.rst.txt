@@ -1,0 +1,442 @@
+User API documentation (``/api/v1/user/..``)
+********************************************************************************
+
+
+GET /api/v2/user/<id>/payment_history/
+================================================================================
+Method for all user payment history.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v2/user/3/payment_history/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+    [
+        {
+            "id": 3,
+            "title": "Course 1",
+            "price": 69.0,
+            "total_price_paid": 60.0,
+            "start_date": null,
+            "due_date": null,
+            "description": "Single course",
+            "user": 3,
+            "courses": [
+                34
+            ],
+            "created_at": "2021-08-21T09:03:21.137974Z"
+        },
+        {
+            "id": 34,
+            "title": "Premium version",
+            "price": 19.99,
+            "total_price_paid": 19.99,
+            "start_date": "2021-08-19T04:09:25Z",
+            "due_date": "2022-08-19T04:09:25Z",
+            "description": "Premium",
+            "user": 3,
+            "courses": [],
+            "created_at": "2021-08-21T09:03:08.205152Z"
+        }
+    ]
+
+.. note::
+
+    Status - 200
+
+
+PUT /api/v2/user/<id>/premium/
+================================================================================
+Method for set premium and period premium.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v2/user/3/premium/``
+
+.. code-block:: json
+
+    {
+        "is_premium": true,
+        "premium_period_start": "2021-08-19T04:09:25Z",
+        "premium_period_end": "2022-08-19T04:09:25Z",
+        "plan_title": "Premium subscription",
+        "plan_price": 19.99,
+        "plan_description": "Premium"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "id": 3,
+        "is_premium": true,
+        "premium_period_start": "2021-08-19T04:09:25Z",
+        "premium_period_end": "2022-08-19T04:09:25Z"
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/
+================================================================================
+Method for create new user.
+
+Same ``/api/v1/user/``
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "user": {
+            "id": 58,
+            "first_name": "Foo",
+            "last_name": "Bar",
+            "email": "email8@gmail.com",
+            "stripe_customer_id": "cus_K6BOWrtv0Hxj4Q",
+            "favorite_teachers": [],
+            "favorite_courses": [],
+            "signature_courses": [],
+            "favorite_videos": [],
+            "favorite_collections": [],
+            "is_viewed_videos": [],
+            "avatar": null,
+            "ios_subscription_deadline": null,
+            "is_premium": null,
+            "premium_period_start": null,
+            "premium_period_end": null,
+            "is_verify": false
+        },
+        "token": null
+    }
+
+GET /api/v2/user/
+================================================================================
+Method for retrieve all users.
+
+Same ``/api/v2/user/``
+
+*Response:*
+
+.. code-block:: json
+
+    [
+        {
+            "id": 2,
+            "first_name": "Alica",
+            "last_name": "Dimitriades",
+            "email": "adimitriades4@simplemachines.org",
+            "stripe_customer_id": "cus_K0XwGzY1UrcsWR",
+            "favorite_teachers": [],
+            "favorite_courses": [],
+            "signature_courses": [],
+            "favorite_videos": [],
+            "favorite_collections": [],
+            "is_viewed_videos": [],
+            "avatar": null,
+            "ios_subscription_deadline": null,
+            "is_premium": null,
+            "premium_period_start": null,
+            "premium_period_end": null,
+            "is_verify": false
+        }
+    ]
+
+
+PUT /api/v2/user/<id>
+================================================================================
+Method for update user detail
+
+**Example:**
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v2/user/1/``
+
+*Request:*
+
+.. code-block:: json
+
+    {
+        "first_name": "Alica",
+        "last_name": "Dimitriades",
+        "email": "adimitriades4@simplemachines.org",
+        "avatar": null,
+        "device_token": "1823712893712873812"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "id": 2,
+        "first_name": "Alica",
+        "last_name": "Dimitriades",
+        "email": "adimitriades4@simplemachines.org",
+        "stripe_customer_id": "cus_K0XwGzY1UrcsWR",
+        "favorite_teachers": [],
+        "favorite_courses": [],
+        "signature_courses": [],
+        "favorite_videos": [],
+        "favorite_collections": [],
+        "is_viewed_videos": [],
+        "avatar": null,
+        "ios_subscription_deadline": null,
+        "is_premium": null,
+        "premium_period_start": null,
+        "premium_period_end": null,
+        "is_verify": true
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/verify/
+================================================================================
+Method for verify user.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/verify/``
+
+.. code-block:: json
+
+    {
+        "email": "email@gmail.com",
+        "verify_code": "034233"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "user": {
+            "id": 58,
+            "first_name": "Foo",
+            "last_name": "Bar",
+            "email": "email8@gmail.com",
+            "stripe_customer_id": "cus_K6BOWrtv0Hxj4Q",
+            "favorite_teachers": [],
+            "favorite_courses": [],
+            "signature_courses": [],
+            "favorite_videos": [],
+            "favorite_collections": [],
+            "is_viewed_videos": [],
+            "avatar": null,
+            "ios_subscription_deadline": null,
+            "is_premium": null,
+            "premium_period_start": null,
+            "premium_period_end": null,
+            "is_verify": true
+        },
+        "token": "Token aa2bbfa988d7c6b1f06384c762d0a216a6ca7c9f"
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/send_verify_code/
+================================================================================
+Method for resend verification code.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/send_verify_code/``
+
+.. code-block:: json
+
+    {
+        "email": "email@gmail.com"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {}
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/login/
+================================================================================
+
+Method for login as user.
+Authentication token not need.
+
+Required fields:
+------------------
+- ``email``
+- ``password``
+- ``device``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/login/``
+
+.. code-block:: json
+
+  {
+      "email": "admin@gmail.com",
+      "password": "qwerty",
+      "device": "123456"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "user": {
+            "id": 69,
+            "first_name": "First",
+            "last_name": "Last",
+            "email": "email@gmail.com",
+            "stripe_customer_id": "cus_123456789",
+            "favorite_teachers": [],
+            "favorite_courses": [],
+            "signature_courses": [],
+            "favorite_videos": [],
+            "favorite_collections": [],
+            "is_viewed_videos": [],
+            "avatar": null,
+            "ios_subscription_deadline": null,
+            "is_premium": true,
+            "premium_period_start": "2021-08-19T04:09:25Z",
+            "premium_period_end": "2022-08-19T04:09:25Z",
+            "is_verify": true
+        },
+        "token": "Token d60c922e9010bc894dd8546c4f2d1b85518dbe08"
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/change_password/
+================================================================================
+
+Method for change user password
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/change_password/``
+
+.. code-block:: json
+
+    {
+        "current_password": "password",
+        "new_password": "password123"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "detail": "Your password has been changed successfully!"
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/reset_password/
+================================================================================
+
+Method for send verification code for reset user password
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/reset_password/``
+
+.. code-block:: json
+
+    {
+        "email": "email@gmail.com"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "detail": "Verification code has been sent to your email!"
+    }
+
+.. note::
+
+    Status - 200
+
+
+POST /api/v2/user/reset_password_done/
+================================================================================
+
+Method for reset user password
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v2/user/reset_password_done/``
+
+.. code-block:: json
+
+    {
+        "email": "email@gmail.com"
+        "code": "123456",
+        "new_password": "password123456"
+    }
+
+*Response:*
+
+.. code-block:: json
+
+    {
+        "detail": "Your password has been changed successfully!"
+    }
+
+.. note::
+
+    Status - 200

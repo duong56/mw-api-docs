@@ -1,0 +1,560 @@
+LiveClass API documentation (``/api/v1/video/..``)
+********************************************************************************
+
+
+POST /api/v1/live_class/
+================================================================================
+Method for create new LiveClass.
+
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``live_url``
+- ``event_start_datetime``
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``POST http://127.0.0.1:8001/api/v1/live_class/``
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "youtube #1",
+    "description": "something",
+    "thumbnail": 1,
+    "teacher": 1,
+    "live_url": "http://youtube.com",
+    "event_start_datetime": "2020-12-12T21:15:47Z",
+    "duration": 10
+  }
+
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 2,
+    "title": "youtube #1",
+    "description": "something",
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "facebook": null,
+        "instagram": null,
+        "location": null,
+        "promo_files": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ],
+        "promo_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ]
+    },
+    "live_url": "http://youtube.com",
+    "event_start_datetime": "2020-12-12T21:15:47Z",
+    "duration": 10,
+    "created_at": "2020-11-12T21:18:55.700493Z",
+    "updated_at": "2020-11-12T21:18:55.700512Z"
+  }
+
+.. note::
+
+  Status - 201 Created.
+
+
+GET /api/v1/live_class/
+================================================================================
+Method for retrieve all LiveClass.
+
+
+**Example: (without pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/live_class/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  [
+    {
+        "id": 1,
+        "title": "youtube #1",
+        "description": "something",
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ]
+        },
+        "live_url": "http://youtube.com",
+        "event_start_datetime": "2020-12-12T21:15:47Z",
+        "duration": 10,
+        "created_at": "2020-11-12T21:15:23Z",
+        "updated_at": "2020-11-12T21:15:23Z"
+    },
+    {
+        "id": 2,
+        "title": "youtube #1",
+        "description": "something",
+        "thumbnail": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "teacher": {
+            "id": 1,
+            "first_name": "Lina",
+            "last_name": "Koctenko",
+            "description": "poetic",
+            "avatar": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "facebook": null,
+            "instagram": null,
+            "location": null,
+            "promo_files": [
+                {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                }
+            ],
+            "promo_videos": [
+                {
+                    "id": 1,
+                    "title": "video #1",
+                    "description": "asd",
+                    "file720p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "file1080p": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "thumbnail": {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    },
+                    "course": 1
+                }
+            ]
+        },
+        "live_url": "http://youtube.com",
+        "event_start_datetime": "2020-12-12T21:15:47Z",
+        "duration": 1000,
+        "created_at": "2020-11-12T21:18:55.700493Z",
+        "updated_at": "2020-11-12T21:18:55.700512Z"
+    }
+  ]
+
+**Example: (with pagination)**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/live_class/?limit=1&offset=0``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "count": 2,
+    "next": "http://127.0.0.1:8000/api/v1/live_class/?limit=1&offset=1",
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "title": "youtube #1",
+            "description": "something",
+            "thumbnail": {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            },
+            "teacher": {
+                "id": 1,
+                "first_name": "Lina",
+                "last_name": "Koctenko",
+                "description": "poetic",
+                "avatar": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "facebook": null,
+                "instagram": null,
+                "location": null,
+                "promo_files": [
+                    {
+                        "id": 1,
+                        "title": "tttiiittlleeee image",
+                        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                        "created_at": "2020-11-12T17:23:14Z"
+                    }
+                ],
+                "promo_videos": [
+                    {
+                        "id": 1,
+                        "title": "video #1",
+                        "description": "asd",
+                        "file720p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "file1080p": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "thumbnail": {
+                            "id": 1,
+                            "title": "tttiiittlleeee image",
+                            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                            "created_at": "2020-11-12T17:23:14Z"
+                        },
+                        "course": 1
+                    }
+                ]
+            },
+            "live_url": "http://youtube.com",
+            "event_start_datetime": "2020-12-12T21:15:47Z",
+            "duration": 10,
+            "created_at": "2020-11-12T21:15:23Z",
+            "updated_at": "2020-11-12T21:15:23Z"
+        }
+    ]
+  }
+
+
+GET /api/v1/live_class/<id>/
+================================================================================
+Method for retrieve LiveClass by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``GET http://127.0.0.1:8001/api/v1/live_class/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "youtube #1",
+    "description": "something",
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "facebook": null,
+        "instagram": null,
+        "location": null,
+        "promo_files": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ],
+        "promo_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ]
+    },
+    "live_url": "http://youtube.com",
+    "event_start_datetime": "2020-12-12T21:15:47Z",
+    "duration": 10,
+    "created_at": "2020-11-12T21:15:23Z",
+    "updated_at": "2020-11-12T21:15:23Z"
+  }
+
+
+PUT /api/v1/live_class/<id>/
+================================================================================
+Method for update LiveClass by id.
+Also possible partial update.
+
+Required fields:
+--------------------------------------------------------------------------------
+- ``title``
+- ``live_url``
+- ``event_start_datetime``
+
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``PUT http://127.0.0.1:8001/api/v1/live_class/1/``
+
+.. code-block:: json
+
+  {
+    "title": "youtube #2"
+  }
+
+*Response:*
+
+.. code-block:: json
+
+  {
+    "id": 1,
+    "title": "youtube #2",
+    "description": "something",
+    "thumbnail": {
+        "id": 1,
+        "title": "tttiiittlleeee image",
+        "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+        "created_at": "2020-11-12T17:23:14Z"
+    },
+    "teacher": {
+        "id": 1,
+        "first_name": "Lina",
+        "last_name": "Koctenko",
+        "description": "poetic",
+        "avatar": {
+            "id": 1,
+            "title": "tttiiittlleeee image",
+            "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+            "created_at": "2020-11-12T17:23:14Z"
+        },
+        "facebook": null,
+        "instagram": null,
+        "location": null,
+        "promo_files": [
+            {
+                "id": 1,
+                "title": "tttiiittlleeee image",
+                "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                "created_at": "2020-11-12T17:23:14Z"
+            }
+        ],
+        "promo_videos": [
+            {
+                "id": 1,
+                "title": "video #1",
+                "description": "asd",
+                "file720p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "file1080p": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "thumbnail": {
+                    "id": 1,
+                    "title": "tttiiittlleeee image",
+                    "file": "http://127.0.0.1:8000/media/files/2020/11/12/photo_2020-11-01_19.11.41.jpeg",
+                    "created_at": "2020-11-12T17:23:14Z"
+                },
+                "course": 1
+            }
+        ]
+    },
+    "live_url": "http://youtube.com",
+    "event_start_datetime": "2020-12-12T21:15:47Z",
+    "duration": 10,
+    "created_at": "2020-11-12T21:15:23Z",
+    "updated_at": "2020-11-12T21:15:23Z"
+  }
+
+
+DELETE /api/v1/live_class/<id>/
+================================================================================
+Method for remove live class by id.
+
+**Example:**
+
+*Request:*
+
+*URL:*
+``DELETE http://127.0.0.1:8001/api/v1/live_class/1/``
+
+.. code-block:: json
+
+  {}
+
+*Response:*
+
+.. code-block:: json
+
+  {}
+
+.. note::
+
+  Status - 204 No Content
+
